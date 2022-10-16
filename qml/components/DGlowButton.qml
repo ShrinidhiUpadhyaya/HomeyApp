@@ -32,17 +32,22 @@ Item {
     }
 
     Image {
+        id: icon
+
         width: AppThemes.setSize(48)
         height: width
-        anchors.centerIn: parent
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: AppThemes.setSize(-8)
         source: root.buttonEnabled ? root.enabledSource : root.disabledSource
     }
 
     DText {
+        id: text
+
         text: root.text
         font.pixelSize: AppThemes.setSize(16)
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: parent.height * 0.05
+        anchors.top: icon.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         color: root.buttonEnabled ? "white" : "#01428B"
     }

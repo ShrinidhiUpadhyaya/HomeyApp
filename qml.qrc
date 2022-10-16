@@ -1,27 +1,24 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>qml/RoomScreen.qml</file>
-        <file>qml/components/AppThemes.qml</file>
-        <file>qml/components/DIconButton.qml</file>
-        <file>qml/components/DTextSwitch.qml</file>
-        <file>qml/components/DRowCornerText.qml</file>
-        <file>qml/components/DText.qml</file>
-        <file>qml/components/DIconSwitch.qml</file>
-        <file>qml/components/DCustomTemperature.qml</file>
         <file>icons/disabledHome1.png</file>
         <file>icons/enabledHome1.png</file>
         <file>icons/disabledHome2.png</file>
         <file>icons/enabledHome2.png</file>
         <file>icons/disabledSun.png</file>
         <file>icons/enabledSun.png</file>
-        <file>qml/components/DArcProgressBar.qml</file>
-        <file>qml/components/DCircularButtons.qml</file>
         <file>icons/webCamBaseDisabled.png</file>
         <file>icons/webCamBaseEnabled.png</file>
         <file>icons/webCamDisabled.png</file>
         <file>icons/webCamEnabled.png</file>
         <file>icons/headerButtonGlow.png</file>
+        <file>icons/backButton.png</file>
+        <file>icons/thermometer.png</file>
+        <file>icons/bulbDisabled.png</file>
+        <file>icons/bulbEnabled.png</file>
+        <file>icons/powerSupplyDisabled.png</file>
+        <file>icons/powerSupplyEnabled.png</file>
+        <file>icons/settingsIcon.png</file>
         <file>icons/headerIcons/bathroomDisabled.png</file>
         <file>icons/headerIcons/bathroomEnabled.png</file>
         <file>icons/headerIcons/bedroomDisabled.png</file>
@@ -30,21 +27,26 @@
         <file>icons/headerIcons/kitchenEnabled.png</file>
         <file>icons/headerIcons/livingroomDisabled.png</file>
         <file>icons/headerIcons/livingroomEnabled.png</file>
-        <file>qml/components/DHeaderGlowButton.qml</file>
-        <file>icons/backButton.png</file>
-        <file>icons/thermometer.png</file>
-        <file>qml/HomeScreen.qml</file>
-        <file>qml/components/DGlowButton.qml</file>
-        <file>qml/components/DIconText.qml</file>
-        <file>icons/bulbDisabled.png</file>
-        <file>icons/bulbEnabled.png</file>
-        <file>icons/powerSupplyDisabled.png</file>
-        <file>icons/powerSupplyEnabled.png</file>
-        <file>icons/settingsIcon.png</file>
         <file>icons/headerIcons/diningRoomDisabled.png</file>
         <file>icons/headerIcons/diningRoomEnabled.png</file>
         <file>icons/headerIcons/kidsRoomDisabled.png</file>
         <file>icons/headerIcons/kidsRoomEnabled.png</file>
+        <file>qml/screenManager/HomeScreen.qml</file>
+        <file>qml/screenManager/RoomScreen.qml</file>
+        <file>qml/screenManager/AppScreen.qml</file>
+        <file>qml/screenManager/DModels.qml</file>
+        <file>qml/components/AppThemes.qml</file>
+        <file>qml/components/DIconButton.qml</file>
+        <file>qml/components/DTextSwitch.qml</file>
+        <file>qml/components/DRowCornerText.qml</file>
+        <file>qml/components/DText.qml</file>
+        <file>qml/components/DIconSwitch.qml</file>
+        <file>qml/components/DCustomTemperature.qml</file>
+        <file>qml/components/DHeaderGlowButton.qml</file>
+        <file>qml/components/DGlowButton.qml</file>
+        <file>qml/components/DIconText.qml</file>
+        <file>qml/components/DArcProgressBar.qml</file>
+        <file>qml/components/DCircularButtons.qml</file>
         <file>qml/components/DSliderSubComponent.qml</file>
         <file>qml/components/DSlider.qml</file>
     </qresource>

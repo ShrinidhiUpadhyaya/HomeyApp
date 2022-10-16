@@ -1,29 +1,23 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Window 2.12
-import "qml"
+import QtQuick.Controls 2.5
+
+import "qml/screenManager"
 
 Window {
     visible: true
-    width: 640
-    height: 480
+    width: Screen.width
+    height: Screen.height
     title: qsTr("Hello World")
 
-//    RoomScreen {
-//        id: roomScrn
 
-//        width: parent.width
-//        height: parent.height
-//    }
+    DModels {
+        id: dmodel
+    }
 
-    HomeScreen {
-        id: homeScrn
-
-        width: parent.width
-        height: parent.height
-
-        onHeightChanged:  {
-            console.log("The Height of the screen changed:-",height,Screen.desktopAvailableHeight)
-        }
+    StackView {
+        anchors.fill: parent
+        initialItem: "qrc:/qml/screenManager/HomeScreen.qml"
     }
 }

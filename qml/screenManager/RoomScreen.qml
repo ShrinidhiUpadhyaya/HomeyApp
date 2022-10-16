@@ -4,9 +4,9 @@ import QtQuick.Layouts 1.12
 
 import AppThemes 1.0
 
-import "components"
+import "../components"
 
-Item {
+AppScreen {
     id: root
 
     property real temperatureValue: 25

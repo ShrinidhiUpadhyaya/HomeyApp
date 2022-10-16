@@ -8,43 +8,32 @@ Item {
 
     property real dpi: Screen.pixelDensity*25.4
 
-    property string confirmedColor:"#FF083A"
-    property string activeColor: "#007BFF"
-    property string deceasedColor: "#6D757D"
-    property string recoveredColor: "#28A745"
-    property string confirmedTextColor:"#FF7381"
-    property string activeTextColor: "#7FC689"
-    property string deceasedTextColor: "#A4A9AF"
-    property string recoveredTextColor: "#7FC689"
-    property string confirmedChartColor:"#FF7381"
-    property string activeChartColor: "#7FC689"
-    property string deceasedChartColor: "#F6F6F7"
-    property string recoveredChartColor: "#E6F5E8"
-    property string vaccinationBackgroundColor: "#FCEAEF"
-    property string vaccinationTextColor: "#DB5481"
-    property string highlightColor: "#D7DFF7"
-    property string notSelectedColor: "#F6F6F7"
-    property string greytTextColor: "#6D757D"
-    property string barChartColor: "#007BFF"
-    property string whiteColor: "white"
-    property string greyColor1: "#EDEEEF"
-    property string transparentColorCode: "transparent"
-    property string whiteSmokeColorCode: "#F1F1F1"
-    property string blackSmokeColorCode: "#36454f"
-    property string testDataBoxBackGround: "#E2E3F5"
-    property string testDataTextColor: "#3C3CAF"
-    property string lightGrey: "#D3D3D3"
-    property string black: "#000000"
 
-    property string croreNotation: "Cr"
-    property string lakhsNotation: "L"
-    property string thousandsNotation: "K"
+    property string enabledColor: "#01428B"
+    property string disabledColor: "#FFFFFF"
+    property string enabledTextColor: "#FFFFFF"
+    property string disabledTextColor: "#01428B"
+    property string transparentColor: "transparent"
+    property string screenColor: "#001053"
+    property string onStatusColor: "#00FEE6"
+    property string offStatusColor: "#01428B"
+    property string dividerLineColor: "#01428B"
+    property string topBarColor: "#003173"
+
+
+    property real topBarSize: AppThemes.setSize(56)
+    property real topBarFontSize: AppThemes.setSize(20)
+    property real topBarIconSize: AppThemes.setSize(24)
+
+    property real primaryFontSize: AppThemes.setSize(22)
+    property real dividerLineSize: AppThemes.setSize(2)
+    property double dividerLineOpacity: 0.6
+    property real dividerLineRadius: 4
+
+    property real primarySwitchHeight: AppThemes.setSize(40)
+
 
     property string fontFamilyType: fontType.name
-
-    property string dateFormat1: "dd MMMM yyyy"
-    property string dateFormat2: "dd MMM yyyy"
-    property string dateFormat3: "yyyy-MM-dd"
 
     FontLoader {
         id: fontType
@@ -68,5 +57,9 @@ Item {
         console.log(value)
         console.log(dateFormat)
         return Qt.formatDateTime(value,dateFormat);
+    }
+
+    function setImageSource(source) {
+        return "qrc:/icons/" + source
     }
 }
