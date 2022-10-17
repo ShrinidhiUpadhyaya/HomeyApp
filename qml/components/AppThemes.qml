@@ -9,8 +9,8 @@ Item {
     property real dpi: Screen.pixelDensity*25.4
 
 
-    property string enabledColor: "#01428B"
-    property string disabledColor: "#FFFFFF"
+    property string disabledColor: "#01428B"
+    property string enabledColor: "#FFFFFF"
     property string enabledTextColor: "#FFFFFF"
     property string disabledTextColor: "#01428B"
     property string transparentColor: "transparent"
@@ -19,6 +19,10 @@ Item {
     property string offStatusColor: "#01428B"
     property string dividerLineColor: "#01428B"
     property string topBarColor: "#003173"
+    property string whiteColor: "#FFFFFF"
+    property string blackColor: "#000000"
+    property string glowColor: "#003173"
+    property string glowButtonColor: "#0C1C62"
 
 
     property real topBarSize: AppThemes.setSize(56)
@@ -26,11 +30,16 @@ Item {
     property real topBarIconSize: AppThemes.setSize(24)
 
     property real primaryFontSize: AppThemes.setSize(22)
+    property real secondaryFontSize: AppThemes.setSize(16)
     property real dividerLineSize: AppThemes.setSize(2)
     property double dividerLineOpacity: 0.6
     property real dividerLineRadius: 4
 
     property real primarySwitchHeight: AppThemes.setSize(40)
+
+    property real simpleAnimationDuration: 100
+    property real averageAnimationDuration: 200
+    property real complexAnimationDuration: 500
 
 
     property string fontFamilyType: fontType.name

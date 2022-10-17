@@ -14,10 +14,7 @@ Rectangle {
 
     signal clicked()
 
-    color: "transparent"
-
-
-
+    color: AppThemes.transparentColor
 
     ColumnLayout {
         width: parent.width
@@ -33,7 +30,7 @@ Rectangle {
             Layout.alignment: Qt.AlignCenter
 
             Behavior on scale {
-                SmoothedAnimation { duration: 200 }
+                SmoothedAnimation { duration: AppThemes.averageAnimationDuration }
             }
         }
 

@@ -3,16 +3,12 @@ import QtQuick 2.12
 Item {
     id: root
 
-
     property bool showBackground: false
     property real lineWidth: 10
     property string colorCircle: "#CC3333"
     property string colorBackground: "#779933"
 
-    property int animationDuration: 200
-
     property real value: 10
-
 
     onValueChanged: {
         canvas.requestPaint()
@@ -22,7 +18,7 @@ Item {
         id: animationArcBegin
         enabled: true
         NumberAnimation {
-            duration: 200
+            duration: AppThemes.averageAnimationDuration
             easing.type: Easing.InOutQuad
         }
     }

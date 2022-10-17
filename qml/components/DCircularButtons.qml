@@ -2,7 +2,6 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtGraphicalEffects 1.0
 
-
 Item {
     id: root
 
@@ -18,7 +17,7 @@ Item {
         verticalOffset: 2
         radius: 2
         samples: 5
-        color: "black"
+        color: AppThemes.blackColor
         source: button
     }
 
@@ -27,27 +26,13 @@ Item {
 
         anchors.fill: parent
 
-        Behavior on scale {
-            enabled: true
-            SmoothedAnimation {
-                duration: 100
-                easing.type: Easing.InOutQuad
-            }
-        }
-
-        onClicked: {
-            root.clicked()
-        }
-
-
-
         contentItem: Text {
             text: root.text
             opacity: enabled ? 1.0 : 0.3
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
-            color: "white"
+            color: AppThemes.whiteColor
             font.pixelSize: AppThemes.setSize(8)
         }
 
@@ -62,9 +47,21 @@ Item {
                 id: animationArcBegin
                 enabled: true
                 SmoothedAnimation {
-                    duration: 200
+                    duration: AppThemes.averageAnimationDuration
                 }
             }
+        }
+
+        Behavior on scale {
+            enabled: true
+            SmoothedAnimation {
+                duration: AppThemes.simpleAnimationDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        onClicked: {
+            root.clicked()
         }
     }
 }

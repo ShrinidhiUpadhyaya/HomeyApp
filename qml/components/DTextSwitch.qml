@@ -4,11 +4,14 @@ import QtQuick.Layouts 1.12
 Rectangle {
     id: root
 
-    color: "transparent"
+    property alias leftText: leftText.text
+    property alias rightText: rightText.text
 
-    implicitHeight: AppThemes.setSize(18)
+    color: AppThemes.transparentColor
+
+    implicitHeight: AppThemes.primarySwitchHeight
     implicitWidth: height * 2
-    border.color: "#01428B"
+    border.color: AppThemes.offStatusColor
     radius: width / 1.2
 
     property bool switchOn: true
@@ -20,10 +23,10 @@ Rectangle {
         height: parent.height
         radius: width / 1.2
         x: switchOn ? root.width / 2 : 0
-        border.color: "#00FEE6"
-        color: "transparent"
+        border.color: AppThemes.onStatusColor
+        color: AppThemes.transparentColor
 
-        Behavior on x { SmoothedAnimation { duration: 100 } }
+        Behavior on x { SmoothedAnimation { duration: AppThemes.simpleAnimationDuration } }
 
 
     }
@@ -63,14 +66,16 @@ Rectangle {
         Rectangle {
             width: parent.width / 2
             height: parent.height
-            color: "transparent"
+            color: AppThemes.transparentColor
 //            border.color: "red"
 
             DText {
+                id: leftText
+
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                text:"OFF"
-                color: !root.switchOn ? "#00FEE6" : "#01428B"
+                text: qsTr("OFF")
+                color: !root.switchOn ? AppThemes.onStatusColor : AppThemes.offStatusColor
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.centerIn: parent
@@ -85,6 +90,8 @@ Rectangle {
 //            border.color: "red"
 
             DText {
+                id: rightText
+
                 text:"ON"
                 color: root.switchOn ? "#00FEE6" : "#01428B"
                 horizontalAlignment: Text.AlignHCenter

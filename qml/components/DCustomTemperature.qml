@@ -4,16 +4,15 @@ import QtQuick.Layouts 1.12
 Rectangle {
     id: root
 
-    signal iconClicked()
-
     property bool switchOn: true
 
+    signal iconClicked()
 
     implicitHeight: AppThemes.setSize(18)
     implicitWidth: AppThemes.setSize(18)
     radius: width/2
 
-    color: "transparent"
+    color: AppThemes.transparentColor
     border.color: "#01B0FA"
 
     RowLayout {
@@ -34,7 +33,7 @@ Rectangle {
                 radius: width / 1.2
                 color: "#e91e63"
 
-                Behavior on height { SmoothedAnimation { duration: 250 } }
+                Behavior on height { SmoothedAnimation { duration: AppThemes.averageAnimationDuration } }
 
             }
         }
@@ -50,10 +49,9 @@ Rectangle {
                 height: switchOn ? parent.height : 0
                 radius: width / 1.2
                 anchors.bottom: parent.bottom
-
                 color: "#e91e63"
 
-                Behavior on height { SmoothedAnimation { duration: 250 } }
+                Behavior on height { SmoothedAnimation { duration: AppThemes.averageAnimationDuration } }
 
             }
         }

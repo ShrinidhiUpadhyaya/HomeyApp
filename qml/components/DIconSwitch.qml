@@ -23,7 +23,7 @@ Rectangle {
         border.color: "#00FEE6"
         color: "transparent"
 
-        Behavior on x { SmoothedAnimation { duration: 100 } }
+        Behavior on x { SmoothedAnimation { duration: AppThemes.simpleAnimationDuration } }
 
 
     }

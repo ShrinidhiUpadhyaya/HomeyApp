@@ -1,18 +1,18 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.12
 
-import AppThemes 1.0
-
 Item {
     id: root
 
-    property string source: ""
-    property string text: ""
+    property alias source: icon.source
+    property alias text: text.text
 
     RowLayout {
         anchors.fill: parent
 
         Image {
+            id: icon
+
             Layout.fillHeight: false
             Layout.fillWidth: false
             Layout.preferredHeight: width
@@ -21,10 +21,12 @@ Item {
         }
 
         DText {
+            id: text
+
             Layout.fillHeight: true
             Layout.fillWidth: true
             text: root.text
-            font.pixelSize: AppThemes.setSize(16)
+            font.pixelSize: AppThemes.secondaryFontSize
             horizontalAlignment: Text.AlignLeft
         }
     }

@@ -1,14 +1,13 @@
 import QtQuick 2.12
 import QtGraphicalEffects 1.0
 
-import AppThemes 1.0
-
-
 Item {
     id: root
 
+    property alias text: text.text
+
     property bool buttonEnabled: false
-    property string text: ""
+
     property string enabledSource: ""
     property string disabledSource: ""
 
@@ -19,14 +18,14 @@ Item {
         anchors.fill: rect
         glowRadius: 10
         spread: 0.5
-        color: "#003173"
+        color: AppThemes.glowColor
         cornerRadius: rect.radius + glowRadius
         visible: root.buttonEnabled
     }
 
     Rectangle {
         id: rect
-        color: "#0C1C62"
+        color: AppThemes.glowButtonColor
         anchors.fill: parent
         radius: parent.height * 0.05
     }
@@ -49,7 +48,7 @@ Item {
         font.pixelSize: AppThemes.setSize(16)
         anchors.top: icon.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        color: root.buttonEnabled ? "white" : "#01428B"
+        color: root.buttonEnabled ? AppThemes.enabledColor : AppThemes.disabledColor
     }
 
     MouseArea {

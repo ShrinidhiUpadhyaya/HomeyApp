@@ -1,7 +1,5 @@
 import QtQuick 2.12
 
-import AppThemes 1.0
-
 Rectangle {
     id: root
 
@@ -53,8 +51,8 @@ Rectangle {
            id: scaleAnim
 
            running: true
-           ScaleAnimator { target: semiRoot; to: 1.2; duration: 100 }
-           ScaleAnimator { target: semiRoot; to: 1; duration: 100 }
+           ScaleAnimator { target: semiRoot; to: 1.2; duration: AppThemes.simpleAnimationDuration }
+           ScaleAnimator { target: semiRoot; to: 1; duration: AppThemes.simpleAnimationDuration }
        }
 
     MouseArea {

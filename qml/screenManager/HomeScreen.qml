@@ -5,7 +5,6 @@ import QtQuick.Layouts 1.12
 import AppThemes 1.0
 import DModels 1.0
 
-
 import "../components"
 
 AppScreen {

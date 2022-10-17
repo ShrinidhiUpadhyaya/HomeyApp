@@ -13,6 +13,6 @@ Text {
     color:"white"
 
     Behavior on scale {
-        SmoothedAnimation { duration: 150 }
+        SmoothedAnimation { duration: AppThemes.simpleAnimationDuration }
     }
 }
