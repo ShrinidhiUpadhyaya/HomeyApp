@@ -3,48 +3,44 @@ import QtQuick 2.12
 Rectangle {
     id: root
 
-    property string source: icon.source
-
     property alias icon: icon
 
     property bool buttonEnabled: false
+    property string source: icon.source
 
     signal iconClicked()
 
-    implicitHeight: AppThemes.setSize(18)
-    implicitWidth: AppThemes.setSize(18)
+    implicitWidth: AppThemes.circularButtonHeight
+    implicitHeight: AppThemes.circularButtonHeight
     radius: width/2
 
-    color: "transparent"    
-
+    color: AppThemes.transparentColor
 
     Item {
         id: semiRoot
 
         anchors.fill: parent
-//        scale: buttonEnabled ? 2 : 1
 
         Image {
             id: icon
 
-            source: root.source
             width: height
             height: parent.height / 2
+            anchors.centerIn: parent
+            source: root.source
             mipmap: true
             fillMode: Image.PreserveAspectFit
             smooth: true
             asynchronous: true
-            anchors.centerIn: parent
 
             RotationAnimator {
-                id: anim
+                id: rotationAnim
                 target: icon;
                 from: 0;
                 to: 45;
-                duration: 400
+                duration: AppThemes.complexAnimationDuration
             }
         }
-
     }
 
     SequentialAnimation {
@@ -59,10 +55,10 @@ Rectangle {
         anchors.fill: parent
         preventStealing: true
         onClicked: {
-            buttonEnabled = !buttonEnabled
-            scaleAnim.start()
+            root.buttonEnabled = !root.buttonEnabled;
+            scaleAnim.start();
             root.iconClicked();
-            anim.start()
+            rotationAnim.start();
         }
     }
 }

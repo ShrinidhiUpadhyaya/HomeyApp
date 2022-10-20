@@ -7,28 +7,26 @@ Rectangle {
     property alias leftText: leftText.text
     property alias rightText: rightText.text
 
-    color: AppThemes.transparentColor
+    property bool switchOn: true
 
-    implicitHeight: AppThemes.primarySwitchHeight
     implicitWidth: height * 2
-    border.color: AppThemes.offStatusColor
+    implicitHeight: AppThemes.primarySwitchHeight
     radius: width / 1.2
 
-    property bool switchOn: true
+    color: AppThemes.transparentColor
+    border.color: AppThemes.offStatusColor
 
     Rectangle {
         id: slideRect
 
         width: parent.width / 2
         height: parent.height
+        x: root.switchOn ? root.width / 2 : 0
         radius: width / 1.2
-        x: switchOn ? root.width / 2 : 0
-        border.color: AppThemes.onStatusColor
         color: AppThemes.transparentColor
+        border.color: AppThemes.onStatusColor
 
         Behavior on x { SmoothedAnimation { duration: AppThemes.simpleAnimationDuration } }
-
-
     }
 
     MouseArea {
@@ -38,68 +36,41 @@ Rectangle {
         }
     }
 
-    //    RowLayout {
-    //        anchors.fill: parent
-
-    //        DText {
-    //            Layout.fillHeight: true
-    //            Layout.fillWidth: true
-    //            text:"OFF"
-    //            color: !root.switchOn ? "#00FEE6" : "#01428B"
-    //            horizontalAlignment: Text.AlignHCenter
-    //            verticalAlignment: Text.AlignVCenter
-    //        }
-
-    //        DText {
-    //            Layout.fillHeight: true
-    //            Layout.fillWidth: true
-    //            text:"ON"
-    //            color: root.switchOn ? "#00FEE6" : "#01428B"
-    //            horizontalAlignment: Text.AlignHCenter
-    //            verticalAlignment: Text.AlignVCenter
-    //        }
-    //    }
-
-    Row {
+    RowLayout {
         anchors.fill: parent
+        spacing: 0
 
-        Rectangle {
-            width: parent.width / 2
-            height: parent.height
-            color: AppThemes.transparentColor
-//            border.color: "red"
+        Item {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             DText {
                 id: leftText
 
-                Layout.fillHeight: true
-                Layout.fillWidth: true
+                anchors.centerIn: parent
                 text: qsTr("OFF")
+                font.pixelSize: AppThemes.secondaryFontSize
                 color: !root.switchOn ? AppThemes.onStatusColor : AppThemes.offStatusColor
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                anchors.centerIn: parent
-                font.pixelSize: AppThemes.setSize(14)
             }
         }
 
-        Rectangle {
-            width: parent.width / 2
-            height: parent.height
-            color: "transparent"
-//            border.color: "red"
+        Item {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             DText {
                 id: rightText
 
-                text:"ON"
-                color: root.switchOn ? "#00FEE6" : "#01428B"
+                anchors.centerIn: parent
+
+                text: qsTr("ON")
+                font.pixelSize: AppThemes.secondaryFontSize
+                color: root.switchOn ? AppThemes.onStatusColor : AppThemes.offStatusColor
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                anchors.centerIn: parent
-                font.pixelSize: AppThemes.setSize(14)
             }
         }
     }
-
 }

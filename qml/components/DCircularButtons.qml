@@ -5,11 +5,11 @@ import QtGraphicalEffects 1.0
 Item {
     id: root
 
-    implicitHeight: AppThemes.setSize(18)
-    implicitWidth: AppThemes.setSize(18)
-
     property string text: ""
     signal clicked()
+
+    implicitWidth: AppThemes.circularButtonHeight
+    implicitHeight: AppThemes.circularButtonHeight
 
     DropShadow {
         anchors.fill: button
@@ -28,23 +28,21 @@ Item {
 
         contentItem: Text {
             text: root.text
-            opacity: enabled ? 1.0 : 0.3
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
             color: AppThemes.whiteColor
-            font.pixelSize: AppThemes.setSize(8)
+            font.pixelSize: AppThemes.primaryFontSize
         }
 
         background: Rectangle {
-            implicitHeight: AppThemes.setSize(18)
-            implicitWidth: AppThemes.setSize(18)
+            implicitWidth: AppThemes.circularButtonHeight
+            implicitHeight: AppThemes.circularButtonHeight
             radius: root.height / 2
-            color: "#0A1E62"
+            color: AppThemes.circularButtonColor
             scale: button.pressed ? 0.8 : 1
 
             Behavior on scale {
-                id: animationArcBegin
                 enabled: true
                 SmoothedAnimation {
                     duration: AppThemes.averageAnimationDuration

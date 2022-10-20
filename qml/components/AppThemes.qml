@@ -23,11 +23,17 @@ Item {
     property string blackColor: "#000000"
     property string glowColor: "#003173"
     property string glowButtonColor: "#0C1C62"
-
+    property string circularButtonColor: "#0A1E62"
+    property string activeColor: "#01B0FA"
+    property string yellowColor: "#FCE570"
+    property string redColor: "#e91e63"
 
     property real topBarSize: AppThemes.setSize(56)
     property real topBarFontSize: AppThemes.setSize(20)
-    property real topBarIconSize: AppThemes.setSize(24)
+    property real topBarIconSize: AppThemes.setSize(40)
+    property real topBarNavigationIconSize: AppThemes.setSize(16)
+    property real primaryIconSize: AppThemes.setSize(40)
+    property real valueTextSize: AppThemes.setSize(16)
 
     property real primaryFontSize: AppThemes.setSize(22)
     property real secondaryFontSize: AppThemes.setSize(16)
@@ -35,7 +41,8 @@ Item {
     property double dividerLineOpacity: 0.6
     property real dividerLineRadius: 4
 
-    property real primarySwitchHeight: AppThemes.setSize(40)
+    property real primarySwitchHeight: AppThemes.setSize(56)
+    property real circularButtonHeight: AppThemes.setSize(56)
 
     property real simpleAnimationDuration: 100
     property real averageAnimationDuration: 200

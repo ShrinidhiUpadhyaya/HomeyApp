@@ -23,6 +23,15 @@ Item {
         }
     }
 
+    DText {
+        text: root.value + "°"
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: AppThemes.setSize(2)
+        color: "#e91e63"
+        font.pixelSize: AppThemes.setSize(48)
+    }
+
     Canvas {
         id: canvas
         width: parent.width

@@ -39,7 +39,7 @@ AppScreen {
                     height: width
                     source: AppThemes.setImageSource("settingsIcon.png")
                     anchors.right: parent.right
-                    anchors.rightMargin: AppThemes.setSize(16)
+                    anchors.rightMargin: AppThemes.topBarNavigationIconSize
                     anchors.verticalCenter: parent.verticalCenter
                 }
             }
@@ -96,6 +96,7 @@ AppScreen {
 
                                 onClicked: {
                                     roomButtonGridView.currentIndex = index
+                                    root.loadScreen(index)
                                 }
                             }
                         }
@@ -150,7 +151,7 @@ AppScreen {
                                 Layout.fillHeight: false
                                 Layout.fillWidth: false
                                 Layout.preferredHeight: AppThemes.primarySwitchHeight
-                                Layout.preferredWidth: height * 3
+                                Layout.preferredWidth: height * 2.5
                             }
                         }
 
@@ -172,7 +173,7 @@ AppScreen {
                                 Layout.fillHeight: false
                                 Layout.fillWidth: false
                                 Layout.preferredHeight: AppThemes.primarySwitchHeight
-                                Layout.preferredWidth: height * 3
+                                Layout.preferredWidth: height * 2.5
                             }
                         }
                     }
@@ -204,6 +205,17 @@ AppScreen {
                     }
                 }
             }
+        }
+    }
+
+    function loadScreen(index) {
+        switch(index) {
+        case 0:
+            stackView.push("qrc:/qml/screenManager/RoomScreen.qml");
+            break;
+        default:
+            stackView.push("qrc:/qml/screenManager/RoomScreen.qml");
+            break;
         }
     }
 }

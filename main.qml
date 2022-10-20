@@ -11,12 +11,9 @@ Window {
     height: Screen.height
     title: qsTr("Hello World")
 
-
-    DModels {
-        id: dmodel
-    }
-
     StackView {
+        id: stackView
+
         anchors.fill: parent
         initialItem: "qrc:/qml/screenManager/HomeScreen.qml"
     }

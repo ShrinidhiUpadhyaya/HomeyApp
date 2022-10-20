@@ -5,9 +5,6 @@ Text {
     id: root
 
     font.bold: false
-    elide: Text.ElideRight
-    horizontalAlignment: Text.AlignHCenter
-    verticalAlignment: Text.AlignVCenter
 //    font.family: AppThemes.fontFamilyType
 
     color:"white"

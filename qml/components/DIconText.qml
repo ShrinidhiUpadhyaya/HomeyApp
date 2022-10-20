@@ -16,7 +16,7 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: false
             Layout.preferredHeight: width
-            Layout.preferredWidth: AppThemes.setSize(40)
+            Layout.preferredWidth: AppThemes.primaryIconSize
             source: root.source
         }
 
@@ -28,6 +28,7 @@ Item {
             text: root.text
             font.pixelSize: AppThemes.secondaryFontSize
             horizontalAlignment: Text.AlignLeft
+            verticalAlignment: Text.AlignVCenter
         }
     }
 }

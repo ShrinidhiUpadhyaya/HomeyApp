@@ -4,16 +4,21 @@ import QtQuick.Layouts 1.12
 Rectangle {
     id: root
 
-    property bool switchOn: true
+    property bool switchOn: false
+    property int maxValue: 100
+    property int value: 60
+    property int count: 4
+    property var heightValues: []
+    property var temp: []
 
     signal iconClicked()
 
-    implicitHeight: AppThemes.setSize(18)
-    implicitWidth: AppThemes.setSize(18)
+    implicitWidth: AppThemes.circularButtonHeight
+    implicitHeight: AppThemes.circularButtonHeight
     radius: width/2
 
     color: AppThemes.transparentColor
-    border.color: "#01B0FA"
+    border.color: AppThemes.disabledColor
 
     RowLayout {
         width: parent.width / 2
@@ -21,78 +26,38 @@ Rectangle {
         spacing: 1
         anchors.centerIn: parent
 
-        Rectangle {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            radius: width / 1.2
-            color:"#01428B"
+        Repeater {
+            model: root.count
 
             Rectangle {
-                width: parent.width
-                height: switchOn ? parent.height : 0
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 radius: width / 1.2
-                color: "#e91e63"
+                color: AppThemes.offStatusColor
 
-                Behavior on height { SmoothedAnimation { duration: AppThemes.averageAnimationDuration } }
+                Rectangle {
+                    width: parent.width
+                    height: root.switchOn ? parent.height * root.getValue(index) : 0
+                    anchors.bottom: parent.bottom
+                    radius: width / 1.2
+                    color: AppThemes.redColor
 
-            }
-        }
-
-        Rectangle {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            radius: width / 1.2
-            color:"#01428B"
-
-            Rectangle {
-                width: parent.width
-                height: switchOn ? parent.height : 0
-                radius: width / 1.2
-                anchors.bottom: parent.bottom
-                color: "#e91e63"
-
-                Behavior on height { SmoothedAnimation { duration: AppThemes.averageAnimationDuration } }
-
-            }
-        }
-
-        Rectangle {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            radius: width / 1.2
-            color:"#01428B"
-
-            Rectangle {
-                width: parent.width
-                height: 0
-                radius: width / 1.2
-
-                color: "#F64A7B"
-            }
-        }
-
-        Rectangle {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            radius: width / 1.2
-            color: "#01428B"
-
-            Rectangle {
-                width: parent.width
-                height: 0
-                radius: width / 1.2
-                color: "#F64A7B"
+                    Behavior on height { SmoothedAnimation { duration: AppThemes.complexAnimationDuration } }
+                }
             }
         }
     }
-
 
     MouseArea {
         anchors.fill: parent
         preventStealing: true
         onClicked: {
-            switchOn = !switchOn
+            root.switchOn = !root.switchOn
             root.iconClicked();
         }
+    }
+
+    function getValue(index) {
+        return Math.max(0, Math.min(1,(root.value - ((root.maxValue / root.count) * index)) / (root.maxValue / root.count)))
     }
 }

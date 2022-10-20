@@ -4,45 +4,35 @@ import QtQuick.Layouts 1.12
 Item {
     id: root
 
-    property string first: "Hello";
-    property string second: "World";
-
-    property real firstTextSize: AppThemes.setSize(4)
-    property real secondTextSize: AppThemes.setSize(6)
+    property alias firstText: firstText.text;
+    property alias secondText: secondText.text;
+    property alias firstTextSize: firstText.font.pixelSize
+    property alias secondTextSize: secondText.font.pixelSize
 
     implicitHeight: Math.max(firstTextSize,secondTextSize)
-
 
     RowLayout {
         anchors.fill: parent
 
-        Item {
+        DText {
             id: firstText
 
             Layout.fillHeight: true
             Layout.fillWidth: true
-
-            DText {
-                anchors.verticalCenter: parent.verticalCenter
-                text: root.first
-                font.pixelSize: root.firstTextSize
-                color: "white"
-            }
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize:  AppThemes.secondaryFontSize
+            color: AppThemes.whiteColor
         }
 
-        Item {
+        DText {
             id: secondText
 
-            Layout.fillHeight: true
             Layout.fillWidth: true
-
-            DText {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.right: parent.right
-                text: root.second
-                font.pixelSize: root.secondTextSize
-                color: "white"
-            }
+            Layout.fillHeight: true
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignRight
+            font.pixelSize: AppThemes.setSize(18)
+            color: AppThemes.whiteColor
         }
     }
 }

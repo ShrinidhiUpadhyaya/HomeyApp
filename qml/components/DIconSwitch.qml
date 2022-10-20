@@ -4,28 +4,29 @@ import QtQuick.Layouts 1.12
 Rectangle {
     id: root
 
-    color: "transparent"
-
-    implicitHeight: AppThemes.setSize(18)
-    implicitWidth: height * 2
-    border.color: "#01428B"
-    radius: width / 1.2
+    property alias leftIcon: leftIcon.source
+    property alias rightIcon: rightIcon.source
 
     property bool switchOn: true
+
+    implicitWidth: height * 2.5
+    implicitHeight: AppThemes.primarySwitchHeight
+    radius: (width / 1.2)
+
+    color: AppThemes.transparentColor
+    border.color: AppThemes.disabledColor
 
     Rectangle {
         id: slideRect
 
         width: parent.width / 2
         height: parent.height
+        x: root.switchOn ? (root.width / 2) : 0
         radius: width / 1.2
-        x: switchOn ? root.width / 2 : 0
-        border.color: "#00FEE6"
-        color: "transparent"
+        color: AppThemes.transparentColor
+        border.color: AppThemes.onStatusColor
 
         Behavior on x { SmoothedAnimation { duration: AppThemes.simpleAnimationDuration } }
-
-
     }
 
     MouseArea {
@@ -39,28 +40,29 @@ Rectangle {
         anchors.fill: parent
 
         Item {
-            Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.fillHeight: true
 
             Image {
-                height: parent.height / 2
+                id: leftIcon
+
                 width: height
-                source: root.switchOn ? "qrc:/icons/disabledHome1.png" : "qrc:/icons/enabledHome1.png"
+                height: parent.height / 2
                 anchors.centerIn: parent
             }
         }
 
         Item {
-            Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.fillHeight: true
 
             Image {
-                height: parent.height / 2
+                id: rightIcon
+
                 width: height
-                source: root.switchOn ? "qrc:/icons/enabledHome2.png" : "qrc:/icons/disabledHome2.png"
+                height: parent.height / 2
                 anchors.centerIn: parent
             }
         }
     }
-
 }
