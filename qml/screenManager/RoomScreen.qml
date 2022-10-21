@@ -10,7 +10,9 @@ import "../components"
 AppScreen {
     id: root
 
+    property real minTemperatureValue: 0
     property real temperatureValue: 25
+    property real maxTemperatureValue: 30
 
     isOverlay: true
 
@@ -105,7 +107,7 @@ AppScreen {
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
                 text: (root.temperatureValue - 1.5) + "°C"
-                font.pixelSize: AppThemes.setSize(48)
+                font.pixelSize: AppThemes.largeFontSize
             }
         }
 
@@ -290,7 +292,7 @@ AppScreen {
                         text: "-"
 
                         onClicked: {
-                            root.increaseTemperature()
+                            root.decreaseTemperature()
                         }
                     }
 
@@ -301,7 +303,7 @@ AppScreen {
                         text: qsTr("+")
 
                         onClicked: {
-                            root.decreaseTemperature()
+                            root.increaseTemperature()
                         }
                     }
                 }
@@ -311,20 +313,19 @@ AppScreen {
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    colorCircle: "red"
-                    colorBackground: "#E6E6E6"
-                    showBackground: true
                     value: root.temperatureValue
+                    midValue: 14
+                    maxValue: root.maxTemperatureValue
                 }
             }
         }
     }
 
-    function increaseTemperature() {
-        temperatureValue = Math.max(0,temperatureValue-1)
+    function decreaseTemperature() {
+        temperatureValue = Math.max(root.minTemperatureValue,root.temperatureValue-1)
     }
 
-    function decreaseTemperature() {
-        temperatureValue = Math.min(30,temperatureValue+1)
+    function increaseTemperature() {
+        temperatureValue = Math.min(root.maxTemperatureValue,root.temperatureValue+1)
     }
 }

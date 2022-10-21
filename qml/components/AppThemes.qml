@@ -27,6 +27,9 @@ Item {
     property string activeColor: "#01B0FA"
     property string yellowColor: "#FCE570"
     property string redColor: "#e91e63"
+    property string temperatureCoolColor: "#01B0FA"
+    property string temperatureHotColor: "#e91e63"
+    property string arcProgressBarBackgroundColor: "#313767"
 
     property real topBarSize: AppThemes.setSize(56)
     property real topBarFontSize: AppThemes.setSize(20)
@@ -37,12 +40,17 @@ Item {
 
     property real primaryFontSize: AppThemes.setSize(22)
     property real secondaryFontSize: AppThemes.setSize(16)
+    property real largeFontSize: AppThemes.setSize(48)
     property real dividerLineSize: AppThemes.setSize(2)
     property double dividerLineOpacity: 0.6
     property real dividerLineRadius: 4
 
     property real primarySwitchHeight: AppThemes.setSize(56)
     property real circularButtonHeight: AppThemes.setSize(56)
+
+    property real arcProgressBarStrokeSize: AppThemes.setSize(12)
+    property real arcProgressBarBackgroundSize: AppThemes.setSize(8)
+    property real arcProgressBarKnobSize: AppThemes.setSize(8)
 
     property real simpleAnimationDuration: 100
     property real averageAnimationDuration: 200
