@@ -26,7 +26,7 @@ Item {
 
         anchors.fill: parent
 
-        contentItem: Text {
+        contentItem: DText {
             text: root.text
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter

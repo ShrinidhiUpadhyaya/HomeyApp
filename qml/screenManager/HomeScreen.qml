@@ -197,10 +197,14 @@ AppScreen {
                         }
 
                         DSlider {
-                            Layout.fillWidth: true
+                            Layout.fillWidth: false
                             Layout.fillHeight: true
+                            Layout.preferredWidth: parent.width / 1.2
+                            Layout.alignment: Qt.AlignHCenter
                             maxValue: root.securitySliderMaxValue
                             value: root.securitySliderValue
+
+
                         }
                     }
                 }

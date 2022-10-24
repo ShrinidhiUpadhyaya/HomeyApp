@@ -12,4 +12,13 @@ Text {
     Behavior on scale {
         SmoothedAnimation { duration: AppThemes.simpleAnimationDuration }
     }
+
+    Behavior on font.pixelSize {
+        NumberAnimation {
+            target: text
+            property: "font.pixelSize"
+            duration: AppThemes.averageAnimationDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
 }

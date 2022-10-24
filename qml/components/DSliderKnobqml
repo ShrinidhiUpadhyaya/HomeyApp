@@ -1,0 +1,51 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.5
+import QtQuick.Layouts 1.12
+
+Item {
+    id: root
+
+    signal clicked();
+
+    RowLayout {
+        anchors.fill: parent
+        spacing: 5
+
+        Rectangle {
+            id: circleRect
+
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+            Layout.preferredWidth: height
+            Layout.preferredHeight: AppThemes.setSize(24) //parent.height * 0.2
+            radius: width / 2
+            color: "#0464AB"
+            border.color:  "#01B0FA"
+            border.width: 1
+            Layout.alignment: Qt.AlignVCenter
+
+            Rectangle {
+                width: parent.width / 2.5
+                height: width
+                radius: width / 2
+                color: "#01B0FA"
+                anchors.centerIn: parent
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    root.clicked();
+                }
+            }
+        }
+
+        Rectangle {
+            Layout.fillHeight: false
+            Layout.fillWidth: true
+            Layout.preferredHeight: circleRect.height / 5
+            color: "#8B92B2"
+            Layout.alignment: Qt.AlignVCenter
+        }
+    }
+}

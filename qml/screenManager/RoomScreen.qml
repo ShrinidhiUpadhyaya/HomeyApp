@@ -46,6 +46,13 @@ AppScreen {
                 anchors.top: parent.top
                 anchors.topMargin: parent.height * 0.1
                 source: AppThemes.setImageSource("backButton.png")
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        stackView.pop();
+                    }
+                }
             }
 
             ListView {

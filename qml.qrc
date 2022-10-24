@@ -47,7 +47,9 @@
         <file>qml/components/DIconText.qml</file>
         <file>qml/components/DArcProgressBar.qml</file>
         <file>qml/components/DCircularButtons.qml</file>
-        <file>qml/components/DSliderSubComponent.qml</file>
+        <file>qml/components/DSliderKnob.qml</file>
         <file>qml/components/DSlider.qml</file>
+        <file>qml/components/DSliderSubComponent.qml</file>
+        <file>qml/components/DSliderHandle.qml</file>
     </qresource>
 </RCC>

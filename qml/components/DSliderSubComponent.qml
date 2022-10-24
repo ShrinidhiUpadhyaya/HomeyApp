@@ -5,56 +5,48 @@ import QtQuick.Layouts 1.12
 Item {
     id: root
 
-    property int type: 1
+    property bool active: false
+    property bool textActive: false
 
-    //    Rectangle {
-    //        width: parent.width / 2
-    //        height: width
-    //        radius: width / 2
-    //        color: "transparent"
-    //        border.color: "#01B0FA"
-    //        border.width: 10
-    //        visible: root.type == 2
-    //        anchors.verticalCenter: parent.verticalCenter
-    //    }
+    property alias text: text.text
 
-    onTypeChanged:  {
-        console.log("Type Changed:",type)
+    signal clicked();
+
+    DText {
+        id: text
+
+        text: "1"
+        color: root.textActive ? AppThemes.activeColor : AppThemes.sliderKnobInactiveBorderColor
+        font.pixelSize: root.textActive ? AppThemes.setSize(32) : AppThemes.setSize(24)
+        anchors.top: parent.top
+        anchors.topMargin: AppThemes.setSize(16)
+        anchors.leftMargin: AppThemes.sliderKnobSize / 2
     }
 
     RowLayout {
         anchors.fill: parent
+        spacing: 5
 
-
-        Rectangle {
-            id: circleRect
+        DSliderKnob {
+            id: sliderKnob
 
             Layout.fillHeight: false
             Layout.fillWidth: false
             Layout.preferredWidth: height
-            Layout.preferredHeight: parent.height * 0.2
-            radius: width / 2
-            color: !(root.type === 3) ? "#0464AB" : "transparent"
-            border.color: !(root.type === 3) ? "#01B0FA" : "#98A6C1"
-            border.width: 1
+            Layout.preferredHeight: AppThemes.sliderKnobSize
             Layout.alignment: Qt.AlignVCenter
+            active: root.active
 
-            Rectangle {
-                width: parent.width / 3
-                height: width
-                radius: width / 2
-                color: "#01B0FA"
-                anchors.centerIn: parent
-                visible: !(root.type === 3)
+            onClicked: {
+                root.clicked();
             }
         }
 
         Rectangle {
             Layout.fillHeight: false
             Layout.fillWidth: true
-            Layout.preferredHeight: AppThemes.setSize(4)
+            Layout.preferredHeight: sliderKnob.height / 5
             color: "#8B92B2"
-            visible: !(root.type === 3)
             Layout.alignment: Qt.AlignVCenter
         }
     }
