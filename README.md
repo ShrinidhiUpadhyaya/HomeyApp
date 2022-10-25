@@ -1,5 +1,7 @@
 # **QML UI Screen Implementations designed for Android and IOS:**
 
+![](screenVideo.gif)
+
 **APK**
 * You can directly install the apk from the apk folder.
 
