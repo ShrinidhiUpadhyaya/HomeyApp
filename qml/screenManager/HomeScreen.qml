@@ -21,8 +21,8 @@ AppScreen {
             anchors.fill: parent
 
             Rectangle {
-                Layout.fillHeight: false
                 Layout.fillWidth: true
+                Layout.fillHeight: false
                 Layout.preferredHeight: AppThemes.setSize(56)
                 color: AppThemes.topBarColor
 
@@ -47,21 +47,22 @@ AppScreen {
             ColumnLayout {
                 id: rootLayout
 
-                Layout.fillHeight: true
                 Layout.fillWidth: false
                 Layout.preferredWidth: parent.width - 32
+                Layout.fillHeight: true
                 Layout.alignment: Qt.AlignCenter
                 spacing: 5
 
                 ColumnLayout {
+                    Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredHeight: parent.height * 0.4
-                    Layout.fillWidth: true
 
                     DText {
                         Layout.fillWidth: true
                         Layout.fillHeight: false
                         Layout.preferredHeight: AppThemes.setSize(48)
+                        Layout.alignment: Qt.AlignHCenter
                         text: qsTr("Security Level")
                         font.pixelSize: AppThemes.primaryFontSize
                     }
@@ -69,8 +70,8 @@ AppScreen {
                     GridLayout {
                         id: roomButtonGridView
 
-                        Layout.fillHeight: true
                         Layout.fillWidth: true
+                        Layout.fillHeight: true
                         columnSpacing: rootLayout.width * 0.05
                         rowSpacing: rootLayout.width * 0.05
 
@@ -80,8 +81,8 @@ AppScreen {
                         property int currentIndex: 0
 
                         Repeater {
-                            Layout.fillHeight: true
                             Layout.fillWidth: true
+                            Layout.fillHeight: true
 
                             model: DModels.roomsButtonModel
 
@@ -104,9 +105,9 @@ AppScreen {
                 }
 
                 Rectangle {
+                    Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredHeight: parent.height * 0.2
-                    Layout.fillWidth: true
                     color: AppThemes.transparentColor
 
                     Rectangle {
@@ -134,12 +135,12 @@ AppScreen {
                         anchors.centerIn: parent
 
                         RowLayout {
-                            Layout.fillHeight: true
                             Layout.fillWidth: true
+                            Layout.fillHeight: true
 
                             DIconText {
-                                Layout.fillHeight: true
                                 Layout.fillWidth: true
+                                Layout.fillHeight: true
                                 text: qsTr("Light Control")
                                 source: lightControlSwitch.switchOn ?
                                             AppThemes.setImageSource("bulbEnabled.png") : AppThemes.setImageSource("bulbDisabled.png")
@@ -148,16 +149,16 @@ AppScreen {
                             DTextSwitch {
                                 id: lightControlSwitch
 
-                                Layout.fillHeight: false
                                 Layout.fillWidth: false
-                                Layout.preferredHeight: AppThemes.primarySwitchHeight
                                 Layout.preferredWidth: height * 2.5
+                                Layout.fillHeight: false
+                                Layout.preferredHeight: AppThemes.primarySwitchHeight
                             }
                         }
 
                         RowLayout {
-                            Layout.fillHeight: true
                             Layout.fillWidth: true
+                            Layout.fillHeight: true
 
                             DIconText {
                                 Layout.fillHeight: true
@@ -170,19 +171,19 @@ AppScreen {
                             DTextSwitch {
                                 id:powerSupplySwitch
 
-                                Layout.fillHeight: false
                                 Layout.fillWidth: false
-                                Layout.preferredHeight: AppThemes.primarySwitchHeight
                                 Layout.preferredWidth: height * 2.5
+                                Layout.fillHeight: false
+                                Layout.preferredHeight: AppThemes.primarySwitchHeight
                             }
                         }
                     }
                 }
 
                 Rectangle {
+                    Layout.fillWidth: true
                     Layout.fillHeight: false
                     Layout.preferredHeight: parent.height * 0.3
-                    Layout.fillWidth: true
                     color: AppThemes.transparentColor
 
                     ColumnLayout {
@@ -192,14 +193,15 @@ AppScreen {
                             Layout.fillWidth: true
                             Layout.fillHeight: false
                             Layout.preferredHeight: AppThemes.setSize(48)
+                            Layout.alignment: Qt.AlignHCenter
                             text: qsTr("Security Level")
                             font.pixelSize: AppThemes.primaryFontSize
                         }
 
                         DSlider {
                             Layout.fillWidth: false
-                            Layout.fillHeight: true
                             Layout.preferredWidth: parent.width / 1.2
+                            Layout.fillHeight: true
                             Layout.alignment: Qt.AlignHCenter
                             maxValue: root.securitySliderMaxValue
                             value: root.securitySliderValue

@@ -34,8 +34,8 @@ Item {
             model: root.maxValue - 1
 
             delegate: DSliderSubComponent {
-                Layout.fillHeight: true
                 Layout.fillWidth: true
+                Layout.fillHeight: true
                 active: (index + 1) <= root.value
                 textActive: (index+1) === root.value
                 text: index+1

@@ -15,7 +15,6 @@ Item {
     DText {
         id: text
 
-        text: "1"
         color: root.textActive ? AppThemes.activeColor : AppThemes.sliderKnobInactiveBorderColor
         font.pixelSize: root.textActive ? AppThemes.setSize(32) : AppThemes.setSize(24)
         anchors.top: parent.top
@@ -30,9 +29,9 @@ Item {
         DSliderKnob {
             id: sliderKnob
 
-            Layout.fillHeight: false
             Layout.fillWidth: false
             Layout.preferredWidth: height
+            Layout.fillHeight: false
             Layout.preferredHeight: AppThemes.sliderKnobSize
             Layout.alignment: Qt.AlignVCenter
             active: root.active
@@ -43,8 +42,8 @@ Item {
         }
 
         Rectangle {
-            Layout.fillHeight: false
             Layout.fillWidth: true
+            Layout.fillHeight: false
             Layout.preferredHeight: sliderKnob.height / 5
             color: "#8B92B2"
             Layout.alignment: Qt.AlignVCenter

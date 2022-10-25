@@ -41,8 +41,8 @@ AppScreen {
             Image {
                 id: backButton
 
-                height: AppThemes.topBarIconSize
                 width: height
+                height: AppThemes.topBarIconSize
                 anchors.top: parent.top
                 anchors.topMargin: parent.height * 0.1
                 source: AppThemes.setImageSource("backButton.png")
@@ -64,7 +64,7 @@ AppScreen {
                 anchors.left: backButton.right
                 anchors.verticalCenter: parent.verticalCenter
 
-                model: DModels.topHeaderButtonModel
+                model: DModels.roomsButtonModel
                 orientation: ListView.Horizontal
                 currentIndex: 0
                 spacing: 5

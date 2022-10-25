@@ -7,7 +7,7 @@ Text {
     font.bold: false
     font.family: AppThemes.fontFamilyType
 
-    color:"white"
+    color: AppThemes.whiteColor
 
     Behavior on scale {
         SmoothedAnimation { duration: AppThemes.simpleAnimationDuration }

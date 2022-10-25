@@ -17,8 +17,8 @@ Item {
         DText {
             id: firstText
 
-            Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.fillHeight: true
             verticalAlignment: Text.AlignVCenter
             font.pixelSize:  AppThemes.secondaryFontSize
             color: AppThemes.whiteColor
