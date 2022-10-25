@@ -68,7 +68,7 @@ Item {
     FontLoader {
         id: fontType
 
-        source: "Fonts/NexaBold.otf"
+        source: "../fonts/NexaBold.otf"
     }
 
 //    function setSize(x) {

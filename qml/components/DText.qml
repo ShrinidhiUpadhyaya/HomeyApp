@@ -5,7 +5,7 @@ Text {
     id: root
 
     font.bold: false
-//    font.family: AppThemes.fontFamilyType
+    font.family: AppThemes.fontFamilyType
 
     color:"white"
 
@@ -15,7 +15,7 @@ Text {
 
     Behavior on font.pixelSize {
         NumberAnimation {
-            target: text
+            target: root
             property: "font.pixelSize"
             duration: AppThemes.averageAnimationDuration
             easing.type: Easing.InOutQuad

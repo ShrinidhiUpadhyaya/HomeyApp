@@ -51,5 +51,6 @@
         <file>qml/components/DSlider.qml</file>
         <file>qml/components/DSliderSubComponent.qml</file>
         <file>qml/components/DSliderHandle.qml</file>
-    </qresource>
+        <file>qml/fonts/NexaBold.otf</file>
+</qresource>
 </RCC>
