@@ -1,4 +1,4 @@
-****QML UI Screen Implementations designed for Android and IOS:****
+# Heading1 **QML UI Screen Implementations designed for Android and IOS:**
 
 **APK**
 * You can directly install the apk from the apk folder.
