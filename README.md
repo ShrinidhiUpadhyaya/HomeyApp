@@ -1,7 +1,7 @@
 # **QML UI Screen Implementations designed for Android and IOS:**
 
 <p align="center">
-![](screenVideo.gif)
+<img src="https://github.com/ShrinidhiUpadhyaya/HomeyApp/blob/main/screenVideo.gif" />
 </p>
 
 **APK**
