@@ -1,4 +1,4 @@
-# **QML UI Screen Implementations designed for Android and IOS:**
+# **QML UI Screen Implementations designed for Android**
 
 <p align="center">
 <img src="https://github.com/ShrinidhiUpadhyaya/HomeyApp/blob/main/screenVideo.gif" />
