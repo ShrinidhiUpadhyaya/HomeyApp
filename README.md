@@ -5,7 +5,7 @@
 </p>
 
 **Inspiration:**
-* Inspiration(https://dribbble.com/shots/3832675-Homey-App-Interactions#)
+* Inspiration(https://dribbble.com/shots/3832675-Homey-App-Interactions)
 
 * Icons were designed using Figma and its plugins.
 
