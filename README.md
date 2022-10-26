@@ -4,11 +4,11 @@
 <img src="https://github.com/ShrinidhiUpadhyaya/HomeyApp/blob/main/screenVideo.gif" />
 </p>
 
-**Inspiration:**
+**Inspiration/Credits:**
 * (https://dribbble.com/shots/3832675-Homey-App-Interactions)
 
-
-Icons were designed using Figma and its plugins.
+**Icons**
+* Icons were designed using Figma and its plugins.
 
 **APK**
 * You can directly install the apk from the apk folder.
