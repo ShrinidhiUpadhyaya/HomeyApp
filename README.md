@@ -7,9 +7,8 @@
 **Inspiration/Credits:**
 * (https://dribbble.com/shots/3832675-Homey-App-Interactions)
 
-****
-* Design guidelines followed https://m2.material.io/components
-* Icons were designed using Figma and its plugins.
+Design guidelines followed https://m2.material.io/components
+Icons were designed using Figma and its plugins.
 
 **APK**
 * You can directly install the apk from the apk folder.
