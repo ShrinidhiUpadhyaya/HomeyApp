@@ -16,7 +16,7 @@ Icons were designed using Figma and its plugins.
 </p>
 
 **APK**
-* You can directly install the apk from the apk folder.
+* You can directly install the apk from the apk folder https://github.com/ShrinidhiUpadhyaya/HomeyApp/tree/main/apk.
 
 **Note:**
 * Just the screens and the components are implemented, functionality is not implemented.
